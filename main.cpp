@@ -5,6 +5,7 @@
 
 #include <QLocale>
 #include <QTranslator>
+#include "win.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    MainWindow w;
-    w.show();
+    win win(0); //схдание объекта управления окном
+    win.show();
     return a.exec();
 }
