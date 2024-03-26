@@ -5,12 +5,11 @@
 #include <QTWidgets>
 #include <QValidator>
 
-
 class win: public QWidget
 {
     Q_OBJECT
 public:
-    explicit win(QWidget *parent = nullptr);
+    win(QWidget *parent = 0);
 private:
     QFrame *frame; // рамка
     QLabel *inputLabel; // метка ввода
@@ -21,15 +20,16 @@ private:
     QPushButton *exitButton; // кнопка Выход
 
 public slots:
-    void begin(); //метод начальной настройки интерфейса
-    void calc(); //метод реализации интерфйса
+    void begin(); //метод начальной настройки интерфейса(окошки)
+    void calc(); //метод реализации вычислений
 };
 
 class StrValidator:public QValidator { //класс компонента проверки ввода
 public:
-    StrValidator(QObject *parent):QValidator(parent) {}
+    StrValidator(QObject *parent):QValidator(parent) {} //констурктор класса
     virtual State validate(QString &str, int &pos) const {
         return Acceptable; //метод всегда принимает вводимую строку
     }
 };
 #endif // WIN_H
+
