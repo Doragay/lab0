@@ -4,13 +4,15 @@
 
 win::win(QWidget *parent):QWidget(parent)// Конструктор создает и компанует виджеты
 {
-this->setWindowTitle("Счетчик"); //заголовок окна
+this->setWindowTitle("Счетчик");
 label1 = new QLabel("Cчет по 1",this); // метка для сетчика edit1
 label2 = new QLabel("Cчет по 5",this);
 edit1 = new Counter("0",this);//счетчик
 edit2 = new Counter("0",this);
 calcButton=new QPushButton("+1",this); //кнопка
 exitButton=new QPushButton("Выход",this);
+edit1->setEnabled(false);
+edit2->setEnabled(false);
 
 QHBoxLayout *layout1 = new QHBoxLayout(); //горизонтальный компановщик
 layout1->addWidget(label1);
