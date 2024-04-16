@@ -6,7 +6,7 @@ class win : public QWidget
 {
 protected:
     Area * area; // область отображения рисунка
-    QPushButton * btn;
+    QPushButton * btn; //кнопка
 public:
    win();
 };

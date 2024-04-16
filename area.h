@@ -1,5 +1,5 @@
 
-#ifndef AREA_H
+#ifndef AREA_H//Холст
 #define AREA_H
 #include "figura.h"
 #include <QtWidgets>
@@ -15,9 +15,10 @@ public:
     MyRect *myrect;
 protected:
     // обработчики событий
-    void paintEvent(QPaintEvent *event);
-    void timerEvent(QTimerEvent *event);
-    void showEvent(QShowEvent *event);
-    void hideEvent(QHideEvent *event);
+    void paintEvent(QPaintEvent *event);//рисование пошагово перемещающихся фигур
+    void timerEvent(QTimerEvent *event);//инициация перерисовки Холста;
+    void showEvent(QShowEvent *event);//включение таймера
+    void hideEvent(QHideEvent *event); //выключение таймера
 };
 #endif
+//события

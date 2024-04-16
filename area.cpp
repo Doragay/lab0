@@ -10,7 +10,7 @@ void Area::showEvent(QShowEvent *)
 {
     myTimer=startTimer(50); // создать таймер
 }
-void Area::paintEvent(QPaintEvent *)
+void Area::paintEvent(QPaintEvent *)//Определение функции paintEvent, которая вызывается при необходимости перерисовки виджета.
 {
     QPainter painter(this);
     painter.setPen(Qt::red);
@@ -19,14 +19,13 @@ void Area::paintEvent(QPaintEvent *)
 }
 void Area::timerEvent(QTimerEvent *event)
 {
-    if (event->timerId() == myTimer) // если наш таймер
+    if (event->timerId() == myTimer) // проверем номер таймера, чтобы быть увереным, что событие от нужного тамера
     {
         alpha=alpha+0.2;
-        update(); // обновить внешний вид
+        update(); // обновить внешний вид, перерисовку окна. Метод сам определяет целесообразность немедленной перерисовки, приспосабливаясь к скорости изменения рисунка
     }
     else
-        QWidget::timerEvent(event); // иначе передать для стандартной
-    // обработки
+        QWidget::timerEvent(event); // иначе передать для стандартной обработки
 }
 void Area::hideEvent(QHideEvent *)
 {
